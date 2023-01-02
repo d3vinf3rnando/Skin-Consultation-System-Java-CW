@@ -1,7 +1,7 @@
 package skinConsultation;
 
 //creating sub class called Patient
-public class Patient {
+public class Patient extends Person {
     private int Patient_ID; //private variable created
 
     //generating getters and setters for above variables

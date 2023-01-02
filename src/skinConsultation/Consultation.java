@@ -2,7 +2,7 @@ package skinConsultation;
 
 import java.util.Date;
 
-public class Consultation {
+public class Consultation extends  Person {
     private int Consultation_ID;
 
     public int getConsultation_ID() {

@@ -7,6 +7,13 @@ public class Doctor  extends  Person{
     private int Medical_Licence_Number;
     private String Specialisation;
 
+    String[] allDoctors;
+
+
+
+
+
+
     //generating getters and setters for above variables
     public int getMedical_Licence_Number() {
         return Medical_Licence_Number;
