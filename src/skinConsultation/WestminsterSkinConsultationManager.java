@@ -1,15 +1,19 @@
 package skinConsultation;
-import javax.print.Doc;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+import java.util.Collections;
 
 public class WestminsterSkinConsultationManager extends Person {
 
 
 
     //implementing the main code base
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
 
         List<String> Doclist = new ArrayList<>();
         List<String> allDoclist = new ArrayList<>(10);
@@ -17,7 +21,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
 
         //letting the user to input unlimited userinputs
-        while (true){
+        while (true) {
             System.out.println("Welcome to Westminster SkinConsultation Doctor Manager");
             System.out.println();//new line
 
@@ -27,16 +31,18 @@ public class WestminsterSkinConsultationManager extends Person {
                     A) To add a Doctor press 1
                     B) To delete a Doctor press 2
                     C) To see the all available Doctors press 3
-                    D) To save Data press 4""");
+                    D) To save Data press 4
+                    E) To exit press 0
+                    """);
 
             System.out.println();
             //get a input from user
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter an Option to continue");
-            int userOption= scanner.nextInt();
+            int userOption = scanner.nextInt();
 
 
-            if (userOption==1){
+            if (userOption == 1) {
 
                 System.out.println("Enter Doctor's Name:");
                 Scanner userin = new Scanner(System.in);
@@ -44,7 +50,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
                 System.out.println("Enter Doctor's  SurName:");
                 String docSurName = userin.nextLine();
-                
+
                 System.out.println("Enter Doctor's DOB:");
                 String docDOB = userin.nextLine();
 
@@ -59,7 +65,6 @@ public class WestminsterSkinConsultationManager extends Person {
 
                 System.out.println("Enter Doctor's Medical Licence Number");
                 int docMedLicenceNumber = userin.nextInt();
-
 
 
                 //create doctor object to add a new doctor
@@ -77,9 +82,9 @@ public class WestminsterSkinConsultationManager extends Person {
                 Doclist.add(newDoctor.getSurName());
                 Doclist.add(newDoctor.getDate_of_Birth());
                 Doclist.add(newDoctor.getAddress());
-                String strDocPhoneNumber=String.valueOf(newDoctor.getPhone_Number()); //converting int values into string
+                String strDocPhoneNumber = String.valueOf(newDoctor.getPhone_Number()); //converting int values into string
                 Doclist.add(strDocPhoneNumber);
-                String strDocMedLicNumber=String.valueOf(newDoctor.getMedical_Licence_Number());
+                String strDocMedLicNumber = String.valueOf(newDoctor.getMedical_Licence_Number());
                 Doclist.add(strDocMedLicNumber);
                 Doclist.add(newDoctor.getSpecialisation());
 
@@ -88,25 +93,36 @@ public class WestminsterSkinConsultationManager extends Person {
                 System.out.println(allDoclist);
 
 
-
-            }else if(userOption==2){
+            } else if (userOption == 2) {
                 Scanner userin = new Scanner(System.in);
                 System.out.println("Please enter Doctor's Medical Licence Number to delete ");
                 String deleteDoc = userin.nextLine();
 
-                if (allDoclist.contains(deleteDoc)){
+                if (allDoclist.contains(deleteDoc)) {
                     //add later
                 }
 
+            } else if (userOption == 3) {
+                Collections.sort(allDoclist);
+                for (String Doctors : allDoclist) {
+                    System.out.println(Doctors);
+                }
+
+
+            } else if (userOption==4) {
+                //write data into a file
+                FileWriter writer = new FileWriter("Doctordata.txt", true);
+                for (String ddata : allDoclist) {
+                    writer.write(ddata + "\n");
+                }
+                writer.close();
+
+            }else if (userOption==0) {
+                break;
+            }else{
+                System.out.println("Please check the option again...");
             }
-
-
-
-
-
-
         }
-
 
 
     }
