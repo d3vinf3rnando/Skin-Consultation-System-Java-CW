@@ -7,7 +7,9 @@ public class Doctor  extends  Person{
     private int Medical_Licence_Number;
     private String Specialisation;
 
-    String[] allDoctors;
+    public String[] allDoctors;
+
+
 
 
 
