@@ -12,7 +12,7 @@ public class WestminsterSkinConsultationManager extends Person {
     public static void main(String[] args) {
 
         List<String> Doclist = new ArrayList<>();
-        List<String> allDoclist = new ArrayList<>();
+        List<String> allDoclist = new ArrayList<>(10);
 
 
 
@@ -84,11 +84,19 @@ public class WestminsterSkinConsultationManager extends Person {
                 Doclist.add(newDoctor.getSpecialisation());
 
                 allDoclist.add(Doclist.toString());
+                Doclist.clear();
                 System.out.println(allDoclist);
 
 
 
             }else if(userOption==2){
+                Scanner userin = new Scanner(System.in);
+                System.out.println("Please enter Doctor's Medical Licence Number to delete ");
+                String deleteDoc = userin.nextLine();
+
+                if (allDoclist.contains(deleteDoc)){
+                    //add later
+                }
 
             }
 
