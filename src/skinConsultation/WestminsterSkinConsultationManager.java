@@ -90,7 +90,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
                 allDoclist.add(Doclist.toString());
                 Doclist.clear();
-                System.out.println(allDoclist);
+                System.out.println(allDoclist); //remove later -only for testing-
 
 
             } else if (userOption == 2) {
@@ -98,8 +98,13 @@ public class WestminsterSkinConsultationManager extends Person {
                 System.out.println("Please enter Doctor's Medical Licence Number to delete ");
                 String deleteDoc = userin.nextLine();
 
-                if (allDoclist.contains(deleteDoc)) {
-                    //add later
+                //added a for loop iterate over the list to check the doctor is available in the multi.d list
+                for (int docIndex = 0; docIndex < allDoclist.size(); docIndex++) {
+                    if (allDoclist.get(docIndex).contains(deleteDoc)) {
+                        allDoclist.remove(docIndex);
+                        System.out.println(allDoclist);
+                        break;
+                    }
                 }
 
             } else if (userOption == 3) {
