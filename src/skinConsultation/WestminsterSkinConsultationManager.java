@@ -112,6 +112,9 @@ public class WestminsterSkinConsultationManager extends Person {
 //                for (String Doctors : allDoclist) {
 //                    System.out.println(Doctors);
 //                }
+                List<String> docList2 =(allDoclist);
+                int col = 3;
+
 
 
 
