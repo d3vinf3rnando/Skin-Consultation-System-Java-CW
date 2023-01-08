@@ -1,13 +1,15 @@
 package skinConsultation;
 
 //create a subclass called doctor
-public class Doctor  extends  Person{
+public  class Doctor  extends  Person {
 
     //create private variables for doctor class
     private int Medical_Licence_Number;
     private String Specialisation;
 
     public String[] allDoctors;
+
+
 
 
 

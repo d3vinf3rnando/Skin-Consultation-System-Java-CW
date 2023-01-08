@@ -108,12 +108,11 @@ public class WestminsterSkinConsultationManager extends Person {
                 }
 
             } else if (userOption == 3) {
-//                Collections.sort(allDoclist.);
-//                for (String Doctors : allDoclist) {
-//                    System.out.println(Doctors);
-//                }
-                List<String> docList2 =(allDoclist);
-                int col = 3;
+                Collections.sort(allDoclist);
+                for (String Doctors : allDoclist) {
+                    System.out.println(Doctors);
+                }
+
 
 
 
@@ -122,7 +121,7 @@ public class WestminsterSkinConsultationManager extends Person {
             } else if (userOption==4) {
                 //write data into a file
                 FileWriter writer = new FileWriter("Doctordata.txt", true);
-                for (String ddata : allDoclist) {
+                for (String ddata : allDoclist) { //ddata = doctor's data
                     writer.write(ddata + "\n");
                 }
                 writer.close();
