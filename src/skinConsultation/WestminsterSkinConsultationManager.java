@@ -108,14 +108,19 @@ public class WestminsterSkinConsultationManager extends Person {
                 }
 
             } else if (userOption == 3) {
+
+                //sort using java collection sort
                 Collections.sort(allDoclist);
                 for (String Doctors : allDoclist) {
-                    System.out.println(Doctors);
-                }
+                    System.out.println(Doctors);}
 
 
-
-
+                //sort uing java collection sort
+//                }
+//                Collections.sort(allDoclist, (list1, list2) -> 0);
+//                for (String sublist : allDoclist) {
+//                    System.out.println(sublist);
+//                }
 
 
             } else if (userOption==4) {
