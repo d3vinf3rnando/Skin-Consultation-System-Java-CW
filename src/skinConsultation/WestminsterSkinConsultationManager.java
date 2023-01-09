@@ -17,6 +17,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
         List<String> Doclist = new ArrayList<>();
         List<String> allDoclist = new ArrayList<>(10);
+        int docCount=0;
 
 
 
@@ -42,7 +43,15 @@ public class WestminsterSkinConsultationManager extends Person {
             int userOption = scanner.nextInt();
 
 
+
             if (userOption == 1) {
+                docCount++;
+                if (docCount == 10) {
+                    System.out.println("Maximum Number of Doctors Reached, Delete some doctors to add new");
+                    break;
+
+                }
+
 
                 System.out.println("Enter Doctor's Name:");
                 Scanner userin = new Scanner(System.in);
@@ -65,6 +74,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
                 System.out.println("Enter Doctor's Medical Licence Number");
                 int docMedLicenceNumber = userin.nextInt();
+                System.out.println("Doctor has been added to the system");
 
 
                 //create doctor object to add a new doctor
@@ -90,7 +100,7 @@ public class WestminsterSkinConsultationManager extends Person {
 
                 allDoclist.add(Doclist.toString());
                 Doclist.clear();
-                System.out.println(allDoclist); //remove later -only for testing-
+//                System.out.println(allDoclist); //remove later -only for testing-
 
 
             } else if (userOption == 2) {
@@ -102,7 +112,8 @@ public class WestminsterSkinConsultationManager extends Person {
                 for (int docIndex = 0; docIndex < allDoclist.size(); docIndex++) {
                     if (allDoclist.get(docIndex).contains(deleteDoc)) {
                         allDoclist.remove(docIndex);
-                        System.out.println(allDoclist);
+                        System.out.println("Doctor has been deleted!!!");
+                        System.out.println("System has "+allDoclist.size()+" number of doctors");
                         break;
                     }
                 }
@@ -123,6 +134,8 @@ public class WestminsterSkinConsultationManager extends Person {
 //                }
 
 
+
+
             } else if (userOption==4) {
                 //write data into a file
                 FileWriter writer = new FileWriter("Doctordata.txt", true);
@@ -130,6 +143,7 @@ public class WestminsterSkinConsultationManager extends Person {
                     writer.write(ddata + "\n");
                 }
                 writer.close();
+                System.out.println("Data saved successfully!!1");
 
             }else if (userOption==0) {
                 break;
