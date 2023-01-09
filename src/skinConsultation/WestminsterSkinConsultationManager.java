@@ -111,8 +111,8 @@ public class WestminsterSkinConsultationManager extends Person {
                 //added a for loop iterate over the list to check the doctor is available in the multi.d list
                 for (int docIndex = 0; docIndex < allDoclist.size(); docIndex++) {
                     if (allDoclist.get(docIndex).contains(deleteDoc)) {
+                        System.out.println(allDoclist.get(docIndex)+" Doctor has been deleted!!!");
                         allDoclist.remove(docIndex);
-                        System.out.println("Doctor has been deleted!!!");
                         System.out.println("System has "+allDoclist.size()+" number of doctors");
                         break;
                     }
