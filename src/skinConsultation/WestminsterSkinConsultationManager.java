@@ -103,7 +103,7 @@ public class WestminsterSkinConsultationManager extends Person {
 //                System.out.println(allDoclist); //remove later -only for testing-
 
 
-            } else if (userOption == 2) {
+            } else if (userOption == 2) { //USERINPUT 2
                 Scanner userin = new Scanner(System.in);
                 System.out.println("Please enter Doctor's Medical Licence Number to delete ");
                 String deleteDoc = userin.nextLine();
